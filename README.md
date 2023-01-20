@@ -44,18 +44,19 @@ Algumas das regras de negócios são:<br>
 Ao chamar o método `setSaldo`, o valor da comissão do sistema é subtraído do total da compra.
 ![](images/codigo-refletir-taxa.png)<br>
 
-##### Administrador pode ver informações da empresa
+##### Administrador não podia ver informações da empresa
 
 Ao logar como administrador, não é possível ver as informações de nenhuma empresa.
 Na verdade, a tela mostrada é a mesma de um usuário comum. Inclusive, ao tentar fazer
-uma compra, o sistema retorna um erro.<br>
+uma compra, o sistema retorna um erro. Pois, o administrador não possui o campo cliente preenchido na entidade usuario.<br>
 ![](images/erro-admin-compra.png)<br>
-Pois, o administrador não possui o campo cliente preenchido na entidade usuario.<br>
+
 Adicionei uma tela exclusiva para o administrador onde é possível listar empresas, produtos e vendas.
 
 ##### Era possível fazer uma compra com um produto que não estava em estoque
 
-Ao listar os produtos, é verificado se o produto está em estoque. Caso não esteja, uma mensagem é exibida.
+A quantidade do estoque não era verificada e nem atualizada ao finalizar a compra.
+Adicionei uma verificação e exibição do estoque na seleção de itens na hora de comprar. Caso não esteja disponível, uma mensagem é exibida.
 
 ### Boas práticas
 
@@ -90,7 +91,7 @@ Utilizei o próprio IntelliJ para identar o código, facilitando ainda mais a le
 ##### Nome de variáveis e métodos não são intuitivos
 
 ![](images/nome-nao-descritivo-e-funcao-pode-ser-lambda.png)<br>
-*Solução*: Utilizei nomes mais intuitivos para as variáveis e métodos.
+Utilizei nomes mais intuitivos para as variáveis e métodos.
 
 ##### Nome dos métodos e variáveis possuem acentuação
 
@@ -99,10 +100,10 @@ Removi a acentuação dos nomes.
 
 ##### Obs
 Além dos erros citados, também foram feitas algumas melhorias no código, como:
-- Alterei algumas funções para lambda;
-- Simplifiquei os switchs;
-- Adicionei espaços entre os blocos de código para facilitar a leitura;
-Tudo isso para deixar o código mais limpo e fácil de ler.
+   - Alterei algumas funções para lambda;
+   - Simplifiquei os switchs;
+   - Adicionei espaços entre os blocos de código para facilitar a leitura.
+<br> Tudo isso para deixar o código mais limpo e fácil de ler.
 
 ### Experiência do usuário
 
@@ -116,7 +117,7 @@ logar novamente a cada ação que deseja executar.
 ## Conclusão
 
 Após a correção dos erros, o sistema ficou muito mais fácil de usar. Além disso, o código ficou muito mais
-limpo e fácil de ler, facilitando a manutenção do código e a adição de novas funcionalidades.
+limpo e fácil de ler, facilitando a manutenção e a adição de novas funcionalidades.
 
 Optei por não alterar o nome das classes, métodos e variáveis para inglês, pois não sei se isso seria necessário
 para esse projeto.<br>
