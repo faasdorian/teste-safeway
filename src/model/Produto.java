@@ -1,3 +1,6 @@
+package model;
+
+import model.Empresa;
 
 public class Produto {
 	private Integer id;

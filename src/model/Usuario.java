@@ -1,3 +1,7 @@
+package model;
+
+import model.Cliente;
+import model.Empresa;
 
 public class Usuario {
 	private String username;
